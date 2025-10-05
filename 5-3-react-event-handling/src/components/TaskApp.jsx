@@ -6,13 +6,12 @@ export default function TaskApp() {
   const [tasks, setTasks] = useState([]);
 
   function handleSubmit() {
-    if (text.trim() === "") {
-      return;
-    }
-    const newTask = { id: Date.now(), text: text };
-    setTasks([...tasks, newTask]);
-    setText("");
+  if (text.trim() === "") {
+    return;
   }
+  setTasks(prev => [...prev, { id: Date.now(), text: text.trim() }]);
+  setText("");
+}
 
   function handleDelete(id) {
     const newTasks = tasks.filter((t) => t.id !== id);
