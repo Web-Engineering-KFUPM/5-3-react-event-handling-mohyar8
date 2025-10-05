@@ -10,7 +10,7 @@ export default function TaskApp() {
     return;
   }
 
-  setTasks((prev) => [...prev, { id: Date.now(), text: text.trim() }]);
+  setTasks(prev => [...prev, { id: Date.now(), text: text.trim() }]);
   setText("");
 }
 
